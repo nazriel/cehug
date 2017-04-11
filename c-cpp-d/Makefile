@@ -1,8 +1,8 @@
 all: build run
 
 build: 
-	g++ -c cppsource.cpp
-	gcc -c csource.c
+	g++ -Wall -Wextra -pedantic -std=c++14 -c cppsource.cpp
+	gcc -Wall -Wextra -pedantic -std=c11 -c csource.c
 	dmd dsource.d cppsource.o csource.o -L-lstdc++ -of=combined
 run: build
 	./combined

@@ -4,14 +4,14 @@ class World {
 	virtual void metoda_z_cpp() = 0;
 };
 
-class Hello : public World {
+class Hello final : public World {
 public:
 	Hello(const char* msg) : mMsg(msg){
 		// nothing
 	}
 
 	void metoda_z_cpp() override {
-		printf(mMsg);
+		printf("%s", mMsg);
 	}
 
 private:
